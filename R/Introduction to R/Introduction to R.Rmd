@@ -55,19 +55,19 @@ With this knowledge, follow the instructions below to complete the exercise.
 
 ```{r}
 # An addition
-5 + 5 
+5 + 5
 
 # A subtraction
-5 - 5 
+5 - 5
 
 # A multiplication
 3 * 5
 
- # A division
-(5 + 5) / 2 
+# A division
+(5 + 5) / 2
 
 # Exponentiation
-2 ^ 5
+2^5
 
 # Modulo
 28 %% 6
@@ -148,7 +148,7 @@ my_oranges <- 6
 my_apples + my_oranges
 
 # Create the variable my_fruit
-my_fruit = my_apples + my_oranges
+my_fruit <- my_apples + my_oranges
 ```
 
 ## Apples and oranges
@@ -169,13 +169,13 @@ with 11 pieces of fruit.
 
 ```{r}
 # Assign a value to the variable my_apples
-my_apples <- 5 
+my_apples <- 5
 
 # Fix the assignment of my_oranges
-my_oranges <- 6 
+my_oranges <- 6
 
 # Create the variable my_fruit and print it out
-my_fruit <- my_apples + my_oranges 
+my_fruit <- my_apples + my_oranges
 my_fruit
 ```
 
@@ -227,7 +227,7 @@ and `my_logical`.
 # Declare variables of different types
 my_numeric <- 42
 my_character <- "universe"
-my_logical <- FALSE 
+my_logical <- FALSE
 
 # Check class of my_numeric
 class(my_numeric)
@@ -372,8 +372,10 @@ roulette_vector <- c(-24, -50, 100, -350, 10)
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
 # Assign days as names of roulette_vectors
-names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
-"Friday")
+names(roulette_vector) <- c(
+       "Monday", "Tuesday", "Wednesday", "Thursday",
+       "Friday"
+)
 ```
 
 ## Naming a vector (2)
@@ -405,7 +407,7 @@ roulette_vector <- c(-24, -50, 100, -350, 10)
 
 # The variable days_vector
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
- 
+
 # Assign the names of the day to roulette_vector and poker_vector
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
@@ -439,7 +441,7 @@ c(5, 7, 9)
 You can also do the calculations with variables that represent vectors:
 
 ```{r}
-a <- c(1, 2, 3) 
+a <- c(1, 2, 3)
 b <- c(4, 5, 6)
 c <- a + b
 ```
@@ -455,7 +457,7 @@ B_vector <- c(4, 5, 6)
 
 # Take the sum of A_vector and B_vector
 total_vector <- A_vector + B_vector
-  
+
 # Print out total_vector
 total_vector
 ```
@@ -519,7 +521,7 @@ names(roulette_vector) <- days_vector
 total_poker <- sum(poker_vector)
 
 # Total winnings with roulette
-total_roulette <-sum(roulette_vector)  
+total_roulette <- sum(roulette_vector)
 
 # Total winnings overall
 total_week <- total_poker + total_roulette
@@ -557,8 +559,8 @@ names(roulette_vector) <- days_vector
 total_poker <- sum(poker_vector)
 total_roulette <- sum(roulette_vector)
 
-# Check if you realized higher total gains in poker than in roulette 
-comparison_result = total_poker > total_roulette
+# Check if you realized higher total gains in poker than in roulette
+comparison_result <- total_poker > total_roulette
 comparison_result
 ```
 
@@ -622,7 +624,7 @@ names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
 # Define a new variable based on a selection
-poker_midweek <- poker_vector[c(2,3,4)]
+poker_midweek <- poker_vector[c(2, 3, 4)]
 ```
 
 ## Vector selection: the good times (3)
@@ -688,7 +690,7 @@ names(roulette_vector) <- days_vector
 
 # Select poker results for Monday, Tuesday and Wednesday
 poker_start <- poker_vector[c("Monday", "Tuesday", "Wednesday")]
-  
+
 # Calculate the average of the elements in poker_start
 mean(poker_start)
 ```
@@ -734,7 +736,7 @@ names(roulette_vector) <- days_vector
 
 # Which days did you make money on poker?
 selection_vector <- poker_vector > 0
-  
+
 # Print out selection_vector
 selection_vector
 ```
@@ -909,10 +911,10 @@ region <- c("US", "non-US")
 titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 
 # Name the columns with region
-colnames(star_wars_matrix) = region
+colnames(star_wars_matrix) <- region
 
 # Name the rows with titles
-rownames(star_wars_matrix) = titles
+rownames(star_wars_matrix) <- titles
 
 # Print out star_wars_matrix
 star_wars_matrix
@@ -940,9 +942,13 @@ the vector named `worldwide_vector`.
 ```{r}
 # Construct star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
-                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-                                           c("US", "non-US")))
+star_wars_matrix <- matrix(box_office,
+       nrow = 3, byrow = TRUE,
+       dimnames = list(
+              c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"),
+              c("US", "non-US")
+       )
+)
 
 # Calculate worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
@@ -968,9 +974,13 @@ result to `all_wars_matrix`. Use the `cbind()` function.
 ```{r}
 # Construct star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
-star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
-                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
-                                           c("US", "non-US")))
+star_wars_matrix <- matrix(box_office,
+       nrow = 3, byrow = TRUE,
+       dimnames = list(
+              c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"),
+              c("US", "non-US")
+       )
+)
 
 # The worldwide box office figures
 worldwide_vector <- rowSums(star_wars_matrix)
@@ -1000,8 +1010,8 @@ this order. Assign the resulting matrix to `all_wars_matrix`.
 
 ```{r}
 # star_wars_matrix and star_wars_matrix2 are available in your workspace
-star_wars_matrix  
-star_wars_matrix2 
+star_wars_matrix
+star_wars_matrix2
 
 # Combine both Star Wars trilogies in one matrix
 all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
@@ -1025,7 +1035,7 @@ all_wars_matrix
 
 # Total revenue for US and non-US
 total_revenue_vector <- colSums(all_wars_matrix)
-  
+
 # Print out total_revenue_vector
 total_revenue_vector
 ```
@@ -1063,13 +1073,13 @@ all_wars_matrix
 
 # Select the non-US revenue for all movies
 non_us_all <- all_wars_matrix[, 2]
-  
+
 # Average non-US revenue
 mean(non_us_all)
-  
+
 # Select the non-US revenue for first two movies
-non_us_some <- all_wars_matrix[1:2,2]
-  
+non_us_some <- all_wars_matrix[1:2, 2]
+
 # Average non-US revenue for first two movies
 mean(non_us_some)
 ```
@@ -1098,7 +1108,7 @@ all_wars_matrix
 
 # Estimate the visitors
 visitors <- all_wars_matrix / 5
-  
+
 # Print the estimate to the console
 visitors
 ```
@@ -1234,9 +1244,11 @@ factor_animals_vector <- factor(animals_vector)
 factor_animals_vector
 
 # Temperature
-temperature_vector <- c("High", "Low", "High","Low", "Medium")
-factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels =
-c("Low", "Medium", "High"))
+temperature_vector <- c("High", "Low", "High", "Low", "Medium")
+factor_temperature_vector <- factor(temperature_vector,
+       order = TRUE, levels =
+              c("Low", "Medium", "High")
+)
 factor_temperature_vector
 ```
 
@@ -1406,7 +1418,7 @@ ordered to `TRUE`, and set levels to `c("slow", "medium", "fast")`.
 speed_vector <- c("medium", "slow", "slow", "medium", "fast")
 
 # Convert speed_vector to ordered factor vector
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", 'medium', "fast"))
+factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "medium", "fast"))
 
 # Print factor_speed_vector
 factor_speed_vector
@@ -1558,8 +1570,10 @@ Use the function `data.frame()` to construct a data frame. Pass the vectors
 ```{r}
 # Definition of vectors
 name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
-type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
-          "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
+type <- c(
+       "Terrestrial planet", "Terrestrial planet", "Terrestrial planet",
+       "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant"
+)
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
@@ -1603,10 +1617,10 @@ the result.
 # The planets_df data frame from the previous exercise is pre-loaded
 
 # Print out diameter of Mercury (row 1, column 3)
-planets_df[1,3]
+planets_df[1, 3]
 
 # Print out data for Mars (entire fourth row)
-planets_df[4,]
+planets_df[4, ]
 ```
 
 ## Selection of data frame elements (2)
@@ -1666,7 +1680,7 @@ vector that results as `rings_vector`.
 
 # Select the rings variable from planets_df
 rings_vector <- planets_df$rings
-  
+
 # Print out rings_vector
 rings_vector
 ```
@@ -1697,7 +1711,7 @@ that have rings are selected.
 # planets_df and rings_vector are pre-loaded in your workspace
 
 # Adapt the code to select all columns for planets with rings
-planets_df[rings_vector,]
+planets_df[rings_vector, ]
 ```
 
 ## Only planets with rings but shorter
@@ -1756,7 +1770,7 @@ square brackets. Keep all columns. Simply print out the result.
 # planets_df is pre-loaded in your workspace
 
 # Use order() to create positions
-positions <-  order(planets_df$diameter)
+positions <- order(planets_df$diameter)
 
 # Use positions to sort planets_df
 planets_df[positions, ]
@@ -1814,13 +1828,13 @@ Construct a list, named `my_list`, that contains the variables `my_vector`,
 
 ```{r}
 # Vector with numerics from 1 up to 10
-my_vector <- 1:10 
+my_vector <- 1:10
 
 # Matrix with numerics from 1 up to 9
 my_matrix <- matrix(1:9, ncol = 3)
 
 # First 10 elements of the built-in data frame mtcars
-my_df <- mtcars[1:10,]
+my_df <- mtcars[1:10, ]
 
 # Construct list with these different elements:
 my_list <- list(my_vector, my_matrix, my_df)
@@ -1858,13 +1872,13 @@ and for `my_df` the name `df`.
 
 ```{r}
 # Vector with numerics from 1 up to 10
-my_vector <- 1:10 
+my_vector <- 1:10
 
 # Matrix with numerics from 1 up to 9
 my_matrix <- matrix(1:9, ncol = 3)
 
 # First 10 elements of the built-in data frame mtcars
-my_df <- mtcars[1:10,]
+my_df <- mtcars[1:10, ]
 
 # Adapt list() call to give the components names
 my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
@@ -1982,14 +1996,14 @@ as `avg_review`, and print it out.
 scores <- c(4.6, 5, 4.8, 5, 4.2)
 comments <- c("I would watch it again", "Amazing!", "I liked it", "One of the best movies", "Fascinating plot")
 
-# Save the average of the scores vector as avg_review  
-avg_review = mean(scores)
+# Save the average of the scores vector as avg_review
+avg_review <- mean(scores)
 
 # Combine scores and comments into the reviews_df data frame
-reviews_df = data.frame(scores, comments)
+reviews_df <- data.frame(scores, comments)
 
 # Create and print out a list, called departed_list
-departed_list = list(movie_title, movie_actors, reviews_df, avg_review)
+departed_list <- list(movie_title, movie_actors, reviews_df, avg_review)
 
 print(departed_list)
 ```
